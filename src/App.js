@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import {React, useState} from 'react';
+import { AppBar } from '@mui/material';
+import { Link } from 'react-router-dom';
+import {Routes, Route} from "react-router-dom";
 import './App.css';
+import FlightsSearch from './components/FlightsSearch';
+import FlightsList from './components/FlightsList';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  const [search, setSearch] = useState([]);
+  const navigate = useNavigate();
+  async function handleEvent(departureAirport, arrivalAirport, departureDate){
+    if(departureAirport !== '' && arrivalAirport !== ''){
+      const response = await fetch(`https://airline-api-app.azurewebsites.net/catalog/?departureAirportCode=${departureAirport}&arrivalAirportCode=${arrivalAirport}&departureDate=${departureDate}`);
+      if(response.ok){
+        
+        const flights = await response.json();
+        console.log(flights);
+        setSearch(flights);
+        navigate("/search");
+      }
+      else{
+        alert("No flights avaliale");
+      }
+      
+  } else {
+    alert('Fill all the fields');
+  }
+}
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+            <Route path="/" element={<FlightsSearch handleEvent={handleEvent}/>} />
+            <Route path="/search" element={<FlightsList data={search}/>} />
+        </Routes>
     </div>
   );
 }
