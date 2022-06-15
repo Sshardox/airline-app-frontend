@@ -11,7 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const theme = createTheme({
   palette: {
-    mode: 'light',
+    multilineColor:{
+      color:'red'
+    },
     primary: {
       main: '#861c6a'
     },
