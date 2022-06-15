@@ -30,8 +30,6 @@ const FlightsSearch = (props) => {
 
     const handleChange = (newValue) => {
         setValue(newValue);
-        console.log(newValue);
-        console.log(newValue.toISOString().slice(0, 10));
     };
 
 

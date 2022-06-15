@@ -9,8 +9,8 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const FlightsCard = (props) =>{
     return(
-        <div style={{marginTop: `${props.marginTop}px`, marginBottom: `${props.marginBottom}px`, marginLeft: `20%`, marginRight: `20%`}}>
-            <Card style ={{boxShadow:"0px 4px 2px -1px #fa3336"}} >
+        <div style={{marginTop: '30px', marginBottom: '10px', marginLeft: '20%', marginRight: '20%'}}>
+            <Card style ={{boxShadow:"0px 3px 0px -1px #fa3336"}} >
                 <CardContent>
                     <Grid container spacing={2}>
                         <Grid item xs={6}>
@@ -70,7 +70,7 @@ const FlightsCard = (props) =>{
 
                         <Grid item xs={6}>
                             <Typography sx={{ fontSize: 16 }} gutterBottom>
-                                $ {props.ticketPrice}
+                            € {props.ticketPrice}
                             </Typography>
                         </Grid>
 
