@@ -9,7 +9,6 @@ import { Grid } from "@mui/material";
 import FlightsCard from "./FlightsCard";
 
 
-
 const FlightsList = (props) =>{
     
     const flightTime = (date1, date2) => {
@@ -29,7 +28,7 @@ const FlightsList = (props) =>{
         <div style={{padding:"20px 0px"}} >
             
             <Grid container spacing={2} >
-                <Grid style={{display:"flex", justifyContent:"space-around"}} item xs={12} md={12}>
+                <Grid style={{backgroundColor:"#EAEAEA", display:"flex", justifyContent:"space-around", paddingBottom:"5px", margin:"1% 17% 0 18%"}} item xs={12} md={12}>
                 <TextField
                         disabled
                         id="departureAirport"
@@ -38,7 +37,7 @@ const FlightsList = (props) =>{
                         InputProps={{
                             readOnly: true,
                         }}
-                        variant="standard"/>
+                        variant="standard" />
                         
                         <TextField
                         disabled

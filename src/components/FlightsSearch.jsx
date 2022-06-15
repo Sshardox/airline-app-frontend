@@ -18,8 +18,6 @@ const FlightsSearch = (props) => {
     const initialDefaults = {departureAirport : '', arrivalAirport : ''};
     const [defaults, setDefaults] = useState(initialDefaults);
     const [value, setValue] = React.useState(new Date(Date.now()));
-    const navigate = useNavigate();
-    const [flights, setFlights] = useState([]);
 
     
     const handleInputChange = ev => {

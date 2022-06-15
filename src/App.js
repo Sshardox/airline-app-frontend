@@ -7,8 +7,8 @@ import FlightsSearch from './components/FlightsSearch';
 import FlightsList from './components/FlightsList';
 import { useNavigate } from 'react-router-dom';
 
-function App() {
-  const [search, setSearch] = useState([]);
+export default function App() {
+  const [flightsearch, setFlightSearch] = useState([]);
   const navigate = useNavigate();
   async function handleEvent(departureAirport, arrivalAirport, departureDate){
     if(departureAirport !== '' && arrivalAirport !== ''){
@@ -17,15 +17,15 @@ function App() {
         
         const flights = await response.json();
         console.log(flights);
-        setSearch(flights);
+        setFlightSearch(flights);
         navigate("/search");
       }
       else{
-        alert("No flights avaliale");
+        alert("No flights avaliable");
       }
       
   } else {
-    alert('Fill all the fields');
+    alert("Fill all the fields");
   }
 }
 
@@ -33,10 +33,8 @@ function App() {
     <div className="App">
       <Routes>
             <Route path="/" element={<FlightsSearch handleEvent={handleEvent}/>} />
-            <Route path="/search" element={<FlightsList data={search}/>} />
+            <Route path="/search" element={<FlightsList data={flightsearch}/>} />
         </Routes>
     </div>
   );
 }
-
-export default App;
