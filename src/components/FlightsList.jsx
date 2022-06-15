@@ -18,8 +18,7 @@ const FlightsList = (props) =>{
         return `${hours}h ${minutes}m`;
     };
 
-    const flights = props.data.map(flight => <FlightsCard marginTop="30" marginBottom="10" 
-                                    ticketPrice={flight.ticketPrice} departureAirportCode={flight.departureAirportCode}
+    const flights = props.data.map(flight => <FlightsCard ticketPrice={flight.ticketPrice} departureAirportCode={flight.departureAirportCode}
                                     arrivalAirportCode={flight.arrivalAirportCode} flightNumber={flight.flightNumber} 
                                     departureAirportHour={new Date(flight.departureDate).toLocaleTimeString('it-IT').substring(0, 5)}
                                     arrivalAirportHour={new Date(flight.arrivalDate).toLocaleTimeString('it-IT').substring(0, 5)}
