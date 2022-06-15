@@ -10,8 +10,6 @@ import FlightTakeoffOutlinedIcon from '@mui/icons-material/FlightTakeoffOutlined
 import FlightLandOutlinedIcon from '@mui/icons-material/FlightLandOutlined';
 import InsertInvitationIcon from '@mui/icons-material/InsertInvitation';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from "react";
 
 const FlightsSearch = (props) => {
 
@@ -35,7 +33,7 @@ const FlightsSearch = (props) => {
 
     return(
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
-            <div style = {{backgroundColor:"#EAEAEA", width: "320px", padding:"10px", paddingBottom:"25px"}}>
+            <div style = {{backgroundColor:"#EAEAEA", width: "320px", padding:"10px", paddingBottom:"30px"}}>
                 <Typography variant="h3" gutterBottom color="primary">
                     Where next?
                 </Typography>
